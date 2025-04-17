@@ -37,7 +37,7 @@ class TransformerBlock(nn.Module):
   feed_forward_hidden_size: int = 512
   feed_forward_output_size: int = 512
   ffn_option: FFNOptions = FFNOptions.SWIGLU
-  dropout_rate: float = 0.1
+  dropout_rate: float = 0.01
 
   @nn.compact
   def __call__(self, x: jnp.ndarray, attn_mask: jnp.ndarray, *, train: bool):
@@ -82,7 +82,7 @@ class Transformer(nn.Module):
   feed_forward_hidden_size: int = 512
   feed_forward_output_size: int = 512
   ffn_option: FFNOptions = FFNOptions.SWIGLU
-  dropout_rate: float = 0.1
+  dropout_rate: float = 0.01
   vocab_size: int = 256
 
   @nn.compact
@@ -364,7 +364,7 @@ class RT1(nn.Module):
   feed_forward_hidden_size: int = 512
   feed_forward_output_size: int = 512
   ffn_option: FFNOptions = FFNOptions.SWIGLU
-  dropout_rate: float = 0.1
+  dropout_rate: float = 0.01
   vocab_size: int = 256
   num_image_tokens: int = 8
   num_action_tokens: int = 11
